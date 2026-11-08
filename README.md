@@ -92,12 +92,12 @@ same 20% test split.
 
 | ML Model Name | Observation about model performance |
 |---|---|
-| Logistic Regression | _To be written from results_ |
-| Decision Tree | _To be written from results_ |
-| KNN | _To be written from results_ |
-| Naive Bayes | _To be written from results_ |
-| Support Vector Machine | _To be written from results_ |
-| Overall winner | _To be written from results_ |
+| Logistic Regression | Top scorer on all six metrics (Accuracy 0.7684, AUC 0.8961, MCC 0.6150). Train accuracy is 0.7731, only 0.005 above test, so it generalises well and hardly overfits. Strong results from a linear model suggest the classes are mostly separable by a weighted sum of the scaled features, especially the 1st/2nd semester approved units and grades. Its weak spot is the `Enrolled` class (recall 0.33): many of these students get predicted as Graduate. |
+| Decision Tree | Third overall (Accuracy 0.7458, F1 0.7350). Limiting depth to 6 kept the train–test gap small (0.783 vs 0.746). It has the best `Enrolled` recall of the five models (0.38), because its rule-based splits can isolate small groups. Its AUC (0.8687) is lower than LR/SVM, as a shallow tree produces coarse, step-like probabilities. |
+| KNN | Fourth (Accuracy 0.7028, MCC 0.5019). With 36 features, distances between students become less meaningful, and the majority `Graduate` class dominates the 15 neighbours. As a result, `Enrolled` recall falls to 0.21 while `Graduate` recall is 0.93. It is also the largest saved model (~1 MB), since it has to store the whole training set. |
+| Naive Bayes | Weakest model (Accuracy 0.6588, F1 0.6417, MCC 0.4279). GaussianNB assumes features are independent and normally distributed, but this dataset has many strongly correlated pairs (e.g. 1st vs 2nd semester units, mother's vs father's qualification) and many integer-coded categorical columns. It catches only 18% of `Enrolled` students. Its one advantage is speed: training takes around 0.01 s. |
+| Support Vector Machine | Second best (Accuracy 0.7582, AUC 0.8865, F1 0.7454), close behind Logistic Regression, and it has the highest `Dropout` precision (0.84). It shows the largest overfitting gap (train 0.830 vs test 0.758): the RBF kernel fits the training data more tightly without improving on unseen students. It is also the slowest to train (~2 s with probability estimates). |
+| Overall winner | **Logistic Regression.** It has the best accuracy, AUC, F1 and MCC, with almost no overfitting, and it is the simplest and most interpretable model. SVM is a close second. All models find `Graduate` and `Dropout` much easier than `Enrolled`, the minority class (18% of rows), which sits between the other two outcomes. Class weighting or oversampling would be the next step to improve it. |
 
 ---
 
