@@ -1,0 +1,11 @@
+# IMPORTANT: scikit-learn and numpy MUST be pinned to the exact versions printed
+# by the last cell of model/train_models.ipynb (e.g. scikit-learn==1.5.2).
+# .joblib models saved with one scikit-learn/numpy version may fail to load
+# (or behave differently) under another version on Streamlit Cloud.
+streamlit
+scikit-learn
+numpy
+pandas
+matplotlib
+seaborn
+joblib
