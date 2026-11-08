@@ -1,6 +1,6 @@
 # Student Dropout & Academic Success — ML Classification
 
-**Live Streamlit app:** <PASTE_STREAMLIT_APP_LINK_HERE>
+**Live Streamlit app:** https://student-dropout-ml-rl9tca3dijal4v68ecaorr.streamlit.app/
 
 ---
 
