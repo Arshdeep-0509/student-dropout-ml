@@ -44,7 +44,7 @@ The 885-row held-out test split is provided as `test_data.csv`.
 
 ## c. GitHub repository link
 
-<PASTE_GITHUB_REPO_LINK_HERE>
+https://github.com/Arshdeep-0509/student-dropout-ml
 
 ```
 ├── app.py                     # Streamlit app (loads saved models, no retraining)
@@ -82,11 +82,11 @@ same 20% test split.
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 |---|---|---|---|---|---|---|
-| Logistic Regression | _ | _ | _ | _ | _ | _ |
-| Decision Tree | _ | _ | _ | _ | _ | _ |
-| KNN | _ | _ | _ | _ | _ | _ |
-| Naive Bayes | _ | _ | _ | _ | _ | _ |
-| Support Vector Machine | _ | _ | _ | _ | _ | _ |
+| Logistic Regression | 0.7684 | 0.8961 | 0.7500 | 0.7684 | 0.7531 | 0.6150 |
+| Decision Tree | 0.7458 | 0.8687 | 0.7338 | 0.7458 | 0.7350 | 0.5780 |
+| KNN | 0.7028 | 0.8368 | 0.6855 | 0.7028 | 0.6755 | 0.5019 |
+| Naive Bayes | 0.6588 | 0.8118 | 0.6334 | 0.6588 | 0.6417 | 0.4279 |
+| Support Vector Machine | 0.7582 | 0.8865 | 0.7465 | 0.7582 | 0.7454 | 0.5986 |
 
 ### Observations
 
